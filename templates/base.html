@@ -1,0 +1,50 @@
+<!--
+Every page on our site (except the admin panel) will contain whatever is in this file.
+This file should contain whatever header and footer we want to exist on every page.
+The content of the actual particular page will be placed where it says
+{% block content %}
+{% endblock %}
+So put the header above that and the footer below that.
+
+This page contains a good explanation of the tools you have available (beyond normal html) in templates:
+https://docs.djangoproject.com/en/3.1/ref/templates/language/
+This link does not explain the url tag, so I'll explain it briefly.
+{% url 'login' %} will be replaced with the correct link for the login page.
+For example: <a href="{% url 'login' %}">Log In</a>
+I'll name pages the same as their filenames.  So a file called 'login.html' can be accessed with {% url 'login' %}
+NOTE THAT THIS WILL NOT WORK FOR SPECIFIC PAST CONFERENCE PAGES.  Access those with '/pastcon/slug'
+
+The admin panel link may or may not have a link, I haven't tried it.  If all else fails, you can use '/admin'
+
+I'll do my best to make you aware of all the variables you have available in each file.
+All of the following variables are available in EVERY page, including this one:
+user.is_authenticated   : whether the user is logged in
+user.username           : username of user if logged in
+user.is_staff           : whether user can access admin site
+user.is_superuser       : basically whether or not it's Bob
+-->
+<!DOCTYPE html>
+{% load static %}
+{% load extrafilters %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <!--
+    The following block controls the default site title (i.e. the name of the tab with the page open)
+    We can give any page a more specific title by putting
+    {% block title %}New Title - {% endblock %}
+    in any html file.  This would give that page the title "New Title - ACM Mid-Southeast"
+    -->
+    <title>{% block title %}{% endblock %}ACM Mid-Southeast</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+</head>
+<body>
+<!-- Header goes here -->
+
+{% block content %}
+{% endblock %}
+
+<!-- Footer goes here -->
+
+</body>
+</html>
