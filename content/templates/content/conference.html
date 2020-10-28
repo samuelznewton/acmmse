@@ -1,0 +1,11 @@
+<!-- 
+This file can display information about ANY conference,
+but {% url 'conference' %} will ALWAYS direct to the current conference.
+If you need to link to a specific conference for any reason,
+use '/pastcon/2018' to direct to 2018 conference, etc.
+Technically, this will work even for the current conference
+(i.e. '/pastcon/2020' will be a functional link working exactly like '/conference')
+
+The actual conference info is in {{ c }}.  Its attributes are year and content.
+As with announcements and about, {{ c.content }} likely contains html, so unescape it
+ -->

@@ -1,0 +1,19 @@
+<!-- This page is used for BOTH the about ACM and about MSE pages.
+Good news is, we don't have to know which we're working with.
+All the content is contained in {{ p }}.
+{{ p.title }} is the title of this page, and {{ p.content }} is the entire content.
+The content includes html.  Be sure it's not escaped (variables normally are, but the
+tag {% autoescape off %} will disable that until {% endautoescape %} )
+ -->
+
+{% extends 'base.html' %}
+{% block title %}{{ p.title }} - {% endblock %}
+{% block content %}
+<!-- Probably put {{ p.title }} somewhere here as a header-->
+
+{% autoescape off %}
+{{ p.content }}
+{% end autoescape %}
+
+
+{% endblock %}

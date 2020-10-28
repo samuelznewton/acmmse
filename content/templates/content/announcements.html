@@ -1,0 +1,23 @@
+<!-- A full list of announcements is available with {{ announcements }}
+Each announcement has title, time, author, and content
+Get each one with something like
+{% for a in announcements %}
+here, {{ a }} is an announcement.  You can't use it directly.
+You can print the title with {{ a.title }}
+etc
+The content may already contain html or even django tags, so we should use {% autoescape off %}{% endautoescape %}
+{% endfor %} -->
+
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+
+{% for a in announcements %}
+
+{% autoescape off %}
+{{ a.content }}
+{% endautoescape %}
+
+{% endfor %}
+
+{% endblock %}
