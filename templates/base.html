@@ -1,4 +1,4 @@
-<!--
+{% comment %}
 Every page on our site (except the admin panel) will contain whatever is in this file.
 This file should contain whatever header and footer we want to exist on every page.
 The content of the actual particular page will be placed where it says
@@ -22,29 +22,29 @@ user.is_authenticated   : whether the user is logged in
 user.username           : username of user if logged in
 user.is_staff           : whether user can access admin site
 user.is_superuser       : basically whether or not it's Bob
--->
+{% endcomment %}
 <!DOCTYPE html>
 {% load static %}
 {% load extrafilters %}
 <html>
 <head>
     <meta charset="utf-8">
-    <!--
+    {% comment %}
     The following block controls the default site title (i.e. the name of the tab with the page open)
     We can give any page a more specific title by putting
     {% block title %}New Title - {% endblock %}
     in any html file.  This would give that page the title "New Title - ACM Mid-Southeast"
-    -->
+    {% endcomment %}
     <title>{% block title %}{% endblock %}ACM Mid-Southeast</title>
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
 </head>
 <body>
-<!-- Header goes here -->
+{% comment %} Header goes here {% endcomment %}
 
 {% block content %}
 {% endblock %}
 
-<!-- Footer goes here -->
+{% comment %} Footer goes here {% endcomment %}
 
 </body>
 </html>
