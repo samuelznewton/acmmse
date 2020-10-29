@@ -1,6 +1,17 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
+
+class ImageContent(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    content = models.ImageField(upload_to='private')
+    def __str__(self):
+        return self.title
+    def __unicode__(self):
+        return self.title
+    class Meta:
+        verbose_name_plural = "Image content"
 
 class About_Pages(models.Model):
     PAGE_CHOICES = (
@@ -15,6 +26,8 @@ class About_Pages(models.Model):
         return self.page
     def __unicode__(self):
         return self.page
+    class Meta:
+        verbose_name_plural = "About pages"
 
 class File(models.Model):
     title = models.CharField(max_length=200)
@@ -23,14 +36,6 @@ class File(models.Model):
     file = models.FileField(upload_to="")
     def filename(self):
         return os.path.basename(self.file.name)
-    def __str__(self):
-        return self.title
-    def __unicode__(self):
-        return self.title
-
-class ImageContent(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    content = models.ImageField(upload_to='private')
     def __str__(self):
         return self.title
     def __unicode__(self):

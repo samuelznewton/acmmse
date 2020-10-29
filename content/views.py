@@ -66,3 +66,4 @@ def documents(request):
     request=request,
     template_name="content/documents.html",
     context={"documents":a}
+    )
