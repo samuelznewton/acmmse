@@ -1,4 +1,5 @@
-<!-- 
+{% extends 'base.html' %}
+{% comment %}
 This file can display information about ANY conference,
 but {% url 'conference' %} will ALWAYS direct to the current conference.
 If you need to link to a specific conference for any reason,
@@ -8,4 +9,4 @@ Technically, this will work even for the current conference
 
 The actual conference info is in {{ c }}.  Its attributes are year and content.
 As with announcements and about, {{ c.content }} likely contains html, so unescape it
- -->
+{% endcomment %}

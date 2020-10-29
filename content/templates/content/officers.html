@@ -1,6 +1,7 @@
-<!-- 
+{% extends 'base.html' %}
+{% comment %}
 Officers are available using {{ officers }}
 Attributes available for each officer are name, position, email, university, photo
 Display photo with something like this (assuming an officer named o):
 <img src="{{ o.photo.name }}" alt="{{ o.name }}">
- -->
+{% endcomment %}
