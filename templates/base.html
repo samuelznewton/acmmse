@@ -5,7 +5,9 @@ The content of the actual particular page will be placed where it says
 {% block content %}
 {% endblock %}
 So put the header above that and the footer below that.
+{% endcomment %}
 
+{% comment %}
 This page contains a good explanation of the tools you have available (beyond normal html) in templates:
 https://docs.djangoproject.com/en/3.1/ref/templates/language/
 This link does not explain the url tag, so I'll explain it briefly.
@@ -14,6 +16,7 @@ For example: <a href="{% url 'login' %}">Log In</a>
 I'll name pages the same as their filenames.  So a file called 'login.html' can be accessed with {% url 'login' %}
 NOTE THAT THIS WILL NOT WORK FOR SPECIFIC PAST CONFERENCE PAGES.  Access those with '/pastcon/slug'
 
+{% comment %}
 The admin panel link may or may not have a link, I haven't tried it.  If all else fails, you can use '/admin'
 
 I'll do my best to make you aware of all the variables you have available in each file.
