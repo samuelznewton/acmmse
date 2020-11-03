@@ -44,7 +44,7 @@ user.is_superuser       : basically whether or not it's Bob
 <body>
     
 <p style = "text-align: right">
-<a href = "{% url 'login' %">Log In</a> | 
+<a href = "{% url 'login' %}">Log In</a> | 
 <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ">Sign Up</a>
 </p>
 
@@ -52,7 +52,7 @@ user.is_superuser       : basically whether or not it's Bob
 
 <p style = "text-align: center">
 <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ">Home</a> | 
-<a href = "aboutacm">About</a> |
+<a href = "{% url 'aboutacm' %}">About</a> |
 <a href = "{% url 'conference' %}">2020 Conference</a> | 
 <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ">Archive</a> | 
 <a href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ">Links</a> | 
