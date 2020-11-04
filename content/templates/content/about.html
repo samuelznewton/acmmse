@@ -11,6 +11,10 @@ tag {% autoescape off %} will disable that until {% endautoescape %} )
 {% block content %}
 {% comment %} Probably put {{ p.title }} somewhere here as a header {% endcomment %}
 
+<h1>
+{{ p.title }}
+</h1>
+
 {% autoescape off %}
 {{ p.content }}
 {% endautoescape %}
