@@ -15,6 +15,10 @@ The content may already contain html or even django tags, so we should use {% au
 
 {% for a in announcements %}
 
+<h1 style = "text-align: center">
+{{ a.title }}
+</h1>
+
 {% autoescape off %}
 {{ a.content }}
 {% endautoescape %}
