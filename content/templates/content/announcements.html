@@ -13,11 +13,15 @@ The content may already contain html or even django tags, so we should use {% au
 {% block title %}{% endblock %}
 {% block content %}
 
+<h1 style = "text-align: center">
+Announcements
+</h1>
+
 {% for a in announcements %}
 
-<h1 style = "text-align: center">
+<h3>
 {{ a.title }}
-</h1>
+</h3>
 
 {% autoescape off %}
 {{ a.content }}
