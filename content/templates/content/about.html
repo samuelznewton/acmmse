@@ -10,33 +10,6 @@ tag {% autoescape off %} will disable that until {% endautoescape %} )
 {% block title %}{{ p.title }} - {% endblock %}
 {% block content %}
 {% comment %} Probably put {{ p.title }} somewhere here as a header {% endcomment %}
-<h1 style="text-align: center">About ACM</h1>
-
-<p>
-<a href = "https://www.acm.org">ACM</a>, the Association for Computing Machinery, is an 
-international scientific and educational organization dedicated to advancing the arts, sciences, 
-and applications of information technology. ACM functions as a locus for computing professionals 
-and students working in the various fields of information technology.
-</p>
-
-<p>
-ACM is the world's oldest and largest educational and scientific computing society. Since 1947 ACM 
-has provided a vital forum for the exchange of information, ideas, and discoveries. Today, ACM serves a 
-membership of more than 80,000 computing professionals in more than 100 countries in all areas of 
-industry, academia, and government; and has over 400 student chapters.
-</p>
-
-<h1>About ACM Mid-Southeast</h1>
-
-<p>
- The MidSoutheast Chapter of ACM was formed in 1959 and is one of the older Chapters of the ACM. 
-The chapter has a membership of approximately 100 members through out the mid southeast region 
-though over 500 computing professionals are on the mailing list of the chapter. The organization 
-adheres to the goals and objectives of ACM and to further those goals and objectives, the chapter 
-offers a yearly conference in Gatlinburg, TN. Over the years, the chapter has offered tutorials on 
-various topics in computing, as well as hosting the annual Student Paper Contest. This contest provides 
-a forum for undergraduate and graduate students to present their work and to view the work of other 
-computing professionals.
 
 {% autoescape off %}
 {{ p.content }}
