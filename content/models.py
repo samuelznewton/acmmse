@@ -68,6 +68,6 @@ class Conference(models.Model):
     content = models.TextField(default='You can use html here.  For example, to insert an image, enter {% showimg "imagename" %}')
     images = models.ManyToManyField(ImageContent, blank=True)
     def __str__(self):
-        return self.year
+        return str(self.year)
     def __unicode__(self):
-        return self.year
+        return str(self.year)
