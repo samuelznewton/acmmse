@@ -10,8 +10,7 @@ Display photo with something like this (assuming an officer named o):
 
 {% block content %}
 {% for a in officers %}
-<h1 style = "text-align: center">{{ a.name }}</h1>
-<img src="{{ a.photo.name }}" alt = "{{ a.name }}">
+<h1 style = "text-align: center">{{ a.name }}<br><img src="{{ a.photo.name }}" alt = "{{ a.name }}"></h1>
 <h3 style = "text-align: center">
 {{ a.position }}<br>
 {{ a.email }}<br>
