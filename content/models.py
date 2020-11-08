@@ -5,11 +5,11 @@ from django.conf import settings
 
 class ImageContent(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    content = models.ImageField(upload_to='private')
+    content = models.ImageField(upload_to='')
     def __str__(self):
-        return self.title
+        return self.content.url
     def __unicode__(self):
-        return self.title
+        return self.content.url
     class Meta:
         verbose_name_plural = "Image content"
 
@@ -20,8 +20,8 @@ class About_Pages(models.Model):
     )
     page = models.CharField(max_length=3, choices=PAGE_CHOICES, unique=True)
     title = models.CharField(max_length=200)
-    content = models.TextField(default='You can use html here.  For example, to insert an image, enter {% showimg "imagename" %}')
-    images = models.ManyToManyField(ImageContent, blank=True)
+    content = models.TextField(widget=forms.TextInput(attrs={'placeholder': 'Format with html, images are found at /file/filename'}))
+    images = models.ManyToManyField(ImageContent, blank=True, label='filenames listed for convenience, no need to select these')
     def __str__(self):
         return self.page
     def __unicode__(self):
@@ -45,8 +45,8 @@ class Announcement(models.Model):
     title = models.CharField(max_length=200)
     time = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    content = models.TextField(default='You can use html here.  For example, to insert an image, enter {% showimg "imagename" %}')
-    images = models.ManyToManyField(ImageContent, blank=True)
+    content = models.TextField(widget=forms.TextInput(attrs={'placeholder': 'Format with html, images are found at /file/filename'}))
+    images = models.ManyToManyField(ImageContent, blank=True, label='filenames listed for convenience, no need to select these')
     def __str__(self):
         return self.title
     def __unicode__(self):
@@ -65,8 +65,8 @@ class Officer(models.Model):
 
 class Conference(models.Model):
     year = models.PositiveIntegerField()
-    content = models.TextField(default='You can use html here.  For example, to insert an image, enter {% showimg "imagename" %}')
-    images = models.ManyToManyField(ImageContent, blank=True)
+    content = models.TextField(widget=forms.TextInput(attrs={'placeholder': 'Format with html, images are found at /file/filename'}))
+    images = models.ManyToManyField(ImageContent, blank=True, label='filenames listed for convenience, no need to select these')
     def __str__(self):
         return str(self.year)
     def __unicode__(self):
