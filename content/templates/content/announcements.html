@@ -24,7 +24,7 @@ Announcements
 </h3>
 
 {% autoescape off %}
-{{ a.content }}
+{{ a.content|escape|safe }}
 {% endautoescape %}
 
 {% endfor %}
