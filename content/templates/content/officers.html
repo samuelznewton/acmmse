@@ -5,3 +5,16 @@ Attributes available for each officer are name, position, email, university, pho
 Display photo with something like this (assuming an officer named o):
 <img src="{{ o.photo.name }}" alt="{{ o.name }}">
 {% endcomment %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+{% for a in officers %}
+<h1 style = "text-align: center">{{ a.name }}</h1>
+<img src="{{ a.photo.name }}" alt = "{{ a.name }}">
+<h3 style = "text-align: center">
+{{ a.position }}<br>
+{{ a.email }}<br>
+{{ a.university }}<br>
+</h3>
+{% endblock %}
