@@ -21,7 +21,7 @@ class About_Pages(models.Model):
     )
     page = models.CharField(max_length=3, choices=PAGE_CHOICES, unique=True)
     title = models.CharField(max_length=200)
-    content = models.TextField(widget=forms.TextInput(attrs={'placeholder': 'Format with html, images are found at /file/filename'}))
+    content = models.TextField(default='Format with html, images are found at /file/filename')
     images = models.ManyToManyField(ImageContent, blank=True, label='filenames listed for convenience, no need to select these')
     def __str__(self):
         return self.page
@@ -46,7 +46,7 @@ class Announcement(models.Model):
     title = models.CharField(max_length=200)
     time = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    content = models.TextField(widget=forms.TextInput(attrs={'placeholder': 'Format with html, images are found at /file/filename'}))
+    content = models.TextField(default='Format with html, images are found at /file/filename')
     images = models.ManyToManyField(ImageContent, blank=True, label='filenames listed for convenience, no need to select these')
     def __str__(self):
         return self.title
@@ -66,7 +66,7 @@ class Officer(models.Model):
 
 class Conference(models.Model):
     year = models.PositiveIntegerField()
-    content = models.TextField(widget=forms.TextInput(attrs={'placeholder': 'Format with html, images are found at /file/filename'}))
+    content = models.TextField(default='Format with html, images are found at /file/filename')
     images = models.ManyToManyField(ImageContent, blank=True, label='filenames listed for convenience, no need to select these')
     def __str__(self):
         return str(self.year)
