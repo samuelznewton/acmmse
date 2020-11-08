@@ -9,4 +9,4 @@ def showimg(context, imgTitle):
         if i.title == imgTitle:
             image = i
             break
-    return '<img src="' + image.photo.name + '" alt="' + imgTitle + '">'
+    return '<img src="' + image.content.name + '" alt="' + imgTitle + '">'
