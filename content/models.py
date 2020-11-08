@@ -1,15 +1,16 @@
 from django.db import models
 from django.conf import settings
+from django import forms
 
 # Create your models here.
 
 class ImageContent(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    content = models.ImageField(upload_to='private')
+    content = models.ImageField(upload_to='')
     def __str__(self):
-        return self.title
+        return self.content.url
     def __unicode__(self):
-        return self.title
+        return self.content.url
     class Meta:
         verbose_name_plural = "Image content"
 
@@ -20,7 +21,7 @@ class About_Pages(models.Model):
     )
     page = models.CharField(max_length=3, choices=PAGE_CHOICES, unique=True)
     title = models.CharField(max_length=200)
-    content = models.TextField(default='You can use html here.  For example, to insert an image, enter {% showimg "imagename" %}')
+    content = models.TextField(default='Format with html, images are found at /file/filename')
     images = models.ManyToManyField(ImageContent, blank=True)
     def __str__(self):
         return self.page
@@ -45,7 +46,7 @@ class Announcement(models.Model):
     title = models.CharField(max_length=200)
     time = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    content = models.TextField(default='You can use html here.  For example, to insert an image, enter {% showimg "imagename" %}')
+    content = models.TextField(default='Format with html, images are found at /file/filename')
     images = models.ManyToManyField(ImageContent, blank=True)
     def __str__(self):
         return self.title
@@ -65,7 +66,7 @@ class Officer(models.Model):
 
 class Conference(models.Model):
     year = models.PositiveIntegerField()
-    content = models.TextField(default='You can use html here.  For example, to insert an image, enter {% showimg "imagename" %}')
+    content = models.TextField(default='Format with html, images are found at /file/filename')
     images = models.ManyToManyField(ImageContent, blank=True)
     def __str__(self):
         return str(self.year)
