@@ -17,11 +17,11 @@ As with announcements and about, {{ c.content }} likely contains html, so unesca
   {{ c.title }}
 </h1>
 
-{ autoescape off }
+{% autoescape off %}
 {{ c.content }}
-{ endautoescape }
+{% endautoescape %}
 
-{ endblock }
-{ endfor }
+{% endblock %}
+{% endfor %}
 
   
