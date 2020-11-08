@@ -1,4 +1,6 @@
 from django import template
+from django.conf import settings
+import os
 
 register = template.Library()
 
@@ -9,4 +11,4 @@ def showimg(context, imgTitle):
         if i.title == imgTitle:
             image = i
             break
-    return '<img src="' + image.photo.name + '" alt="' + imgTitle + '">'
+    return '<img src="' + os.path.join(settings.MEDIA_ROOT, image.content.name) + '" alt="' + imgTitle + '">'

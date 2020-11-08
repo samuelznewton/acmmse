@@ -26,7 +26,7 @@ SECRET_KEY = 'hvgx%c=r%k!=+_r=p$alw(50tq-7p88*93pw)8l*&(heu5!slq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-MEDIA_ROOT = BASE_DIR / "content\\files\\"
+MEDIA_ROOT = os.path.join(BASE_DIR, "content", "files")
 
 ALLOWED_HOSTS = ['76.181.216.231','192.168.1.22',]
 

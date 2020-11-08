@@ -10,10 +10,14 @@ tag {% autoescape off %} will disable that until {% endautoescape %} )
 {% block title %}{{ p.title }} - {% endblock %}
 {% block content %}
 {% comment %} Probably put {{ p.title }} somewhere here as a header {% endcomment %}
+{% load extrafilters %}
+<h1 style="align-text: center">
+{{ p.title }}
+</h1>
 
 {% autoescape off %}
 {{ p.content }}
-{% end autoescape %}
+{% endautoescape %}
 
 
 {% endblock %}

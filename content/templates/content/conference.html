@@ -10,3 +10,17 @@ Technically, this will work even for the current conference
 The actual conference info is in {{ c }}.  Its attributes are year and content.
 As with announcements and about, {{ c.content }} likely contains html, so unescape it
 {% endcomment %}
+{% block title %}{% endblock %}
+{% block content %}
+{% load extrafilters %}
+<h1>
+{{ c.year }}
+</h1>
+
+{% autoescape off %}
+{{ c.content }}
+{% endautoescape %}
+
+{% endblock %}
+
+  
