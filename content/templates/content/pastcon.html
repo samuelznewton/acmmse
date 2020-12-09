@@ -6,7 +6,8 @@ if you want to link to a specific past year's conference.  e.g. '/pastcon/2018'
 
 Each members of {{ conferences }} has attributes year and content, but you should only need the year on this page
 {% endcomment %}
-
+{% block content %}
 {% for c in conferences %}
   <a href="/pastcon/{{ c.year }}">{{ c.year }}</a>
 {% endfor %}
+{% endblock %}
