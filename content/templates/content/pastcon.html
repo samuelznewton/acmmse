@@ -8,6 +8,6 @@ Each members of {{ conferences }} has attributes year and content, but you shoul
 {% endcomment %}
 {% block content %}
 {% for c in conferences %}
-  <a href="/pastcon/{{ c.year }}">{{ c.year }}</a><br>
+  <h3><a href="/pastcon/{{ c.year }}">{{ c.year }}</a></h3>
 {% endfor %}
 {% endblock %}
